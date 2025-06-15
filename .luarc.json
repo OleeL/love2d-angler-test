@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "runtime.version": "LuaJIT",
+  "workspace.library": ["library", "${3rd}/love2d/library"],
+  "diagnostics.groupSeverity": {
+    "unused": "Information",
+    "redefined": "Warning"
+  },
+  "runtime.special": {
+    "love.filesystem.load": "loadfile"
+  }
+}
