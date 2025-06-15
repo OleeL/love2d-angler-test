@@ -18,8 +18,8 @@ local function clamp(v, lo, hi) return math.max(lo, math.min(hi, v)) end
 
 function Camera:update(targetX, targetY)
     -- centre the camera on the target
-    self.x = clamp(targetX - self.screenW / 2, 0, self.worldW - self.screenW)
-    self.y = clamp(targetY - self.screenH / 2, 0, self.worldH - self.screenH)
+    self.x = clamp(targetX - self.screenW * 0.5, 0, self.worldW - self.screenW)
+    self.y = clamp(targetY - self.screenH * 0.5, 0, self.worldH - self.screenH)
 end
 
 -- Wrap love.graphics transforms

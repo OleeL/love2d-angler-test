@@ -32,7 +32,7 @@ function OrbManager:update(dt, player)
     -- collision check
     for i, orb in ipairs(self.list) do
         local dx, dy = player.x - orb.x, player.y - orb.y
-        if dx * dx + dy * dy < (player.w / 2 + orb.r) ^ 2 then
+        if dx * dx + dy * dy < (player.w * 0.5 + orb.r) ^ 2 then
             player.score = player.score + 1
             player.x, player.y = 100, 100
             self.list = {}

@@ -70,7 +70,7 @@ function love.update(dt)
 
     -- game-over?
     local dx, dy = player.x - monster.x, player.y - monster.y
-    if dx * dx + dy * dy < (player.w / 2 + monster.w / 2) ^ 2 then
+    if dx * dx + dy * dy < (player.w * 0.5 + monster.w * 0.5) ^ 2 then
         gameOver = true
         love.audio.stop(monsterSound); love.audio.stop(monsterRoamSound)
     end
@@ -94,7 +94,7 @@ function love.draw()
     love.graphics.print("Score: " .. player.score, 10, 10)
     if gameOver then
         love.graphics.printf("You were eaten! Press R to restart",
-            0, VIRT_H / 2 - 10, VIRT_W, "center")
+            0, VIRT_H * 0.5 - 10, VIRT_W, "center")
     end
 
     love.graphics.setCanvas() -- back to real screen
