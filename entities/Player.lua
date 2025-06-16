@@ -5,12 +5,12 @@ local function clamp(v, lo, hi) return math.max(lo, math.min(hi, v)) end
 
 function Player:new(x, y)
     local o = {
-        x = x or 100,
-        y = y or 300,
-        w = 32,
-        h = 48,
-        vx = 0,
-        vy = 0,
+        x         = x or 100,
+        y         = y or 300,
+        w         = 32,
+        h         = 48,
+        vx        = 0,
+        vy        = 0,
         speed     = 200,
         jumpForce = -400,
         gravity   = 800,
@@ -21,7 +21,7 @@ function Player:new(x, y)
 end
 
 function Player:update(dt, platforms, worldW)
-    -- ===== input =====
+    -- input
     if love.keyboard.isDown("left", "a") then
         self.vx = -self.speed
     elseif love.keyboard.isDown("right", "d") then
@@ -34,7 +34,7 @@ function Player:update(dt, platforms, worldW)
         self.vy = self.jumpForce; self.onGround = false
     end
 
-    -- ===== physics & landing =====
+    -- physics & landing
     self.vy = self.vy + self.gravity * dt
     local nx = self.x + self.vx * dt
     local ny = self.y + self.vy * dt

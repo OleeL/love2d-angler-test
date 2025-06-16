@@ -1,9 +1,12 @@
 function love.conf(t)
+    math.randomseed(os.time())
+
     t.window.title = "horror"
     t.window.width = 800
     t.window.height = 600
     t.window.resizable = false
     t.window.fullscreen = true
+    t.window.fullscreentype = "desktop"
     t.version = "11.4"
     t.modules.audio = true
     t.modules.event = true

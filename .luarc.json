@@ -8,5 +8,8 @@
   },
   "runtime.special": {
     "love.filesystem.load": "loadfile"
-  }
+  },
+    "diagnostics.disable": [
+        "redefined-local"
+    ]
 }
